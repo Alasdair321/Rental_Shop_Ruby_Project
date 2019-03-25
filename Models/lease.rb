@@ -51,6 +51,18 @@ class Lease
     return total_leased_equipment['sum'].to_i
   end
 
+  def self.find_all_leases_by_id(id)
+    sql = "SELECT *
+          FROM leases
+          WHERE equipment_id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return result.map { |lease| Lease.new(lease)  }
+  end
+
+
+
+
   def self.delete_all()
     sql = "DELETE FROM leases"
     SqlRunner.run(sql)
