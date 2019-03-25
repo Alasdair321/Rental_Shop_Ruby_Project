@@ -33,7 +33,7 @@ class Lease
       counter_array.push(counter) #adds counted instances to counter array
     end
     #check if difference in stock and leased is greater or equal to requested amount:
-    if Equipment.find(@equipment_id).total_quantity - counter_array.max >= @number_leased
+    if Equipment.find(@equipment_id).total_quantity.to_i - counter_array.max >= @number_leased
       #if true then save lease and return string reservation successful
         sql = "INSERT INTO leases
       (

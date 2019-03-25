@@ -16,7 +16,7 @@ ski_small = Equipment.new({
 ski_medium = Equipment.new({
   "type" => "skis",
   "size" => "medium",
-  "total_quantity" => 20,
+  "total_quantity" => 15,
   "cost" => 15
   })
 ski_large = Equipment.new({
