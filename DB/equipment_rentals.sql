@@ -23,7 +23,6 @@ CREATE TABLE leases (
   id SERIAL PRIMARY KEY,
   equipment_id INT4 REFERENCES equipment(id) ON DELETE CASCADE,
   customer_id INT4 REFERENCES customers(id) ON DELETE CASCADE,
-  start_date DATE,
-  end_date DATE,
+  date DATE,
   number_leased INT4
 );
