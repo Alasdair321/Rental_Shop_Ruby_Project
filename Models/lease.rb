@@ -88,8 +88,70 @@ class Lease
     return date_range_array
   end
 
+  def self.end_lease(id)
+    sql = "SELECT * FROM leases
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    lease = Lease.new(result)
 
+    sql = "SELECT * FROM equipment
+    WHERE id = $1"
+    values = [lease.equipment_id]
+    result = SqlRunner.run(sql, values).first
+    equipment = Equipment.new(result)
 
+    sql = "SELECT * FROM customers
+    WHERE id = $1"
+    values = [lease.customer_id]
+    result = SqlRunner.run(sql, values).first
+    customer = Customer.new(result)
+
+    sql = "INSERT INTO leases_log
+          (
+            lease_id,
+            equipment_type,
+            equipment_size,
+            equipment_cost,
+            customer_first_name,
+            customer_surname,
+            customer_contact_number,
+            customer_contact_email,
+            start_date,
+            end_date,
+            number_leased
+          )
+          VALUES
+          (
+          $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11
+          )"
+  values = [lease.id, equipment.type, equipment.size, equipment.cost, customer.first_name, customer.surname, customer.contact_number, customer.contact_email, lease.start_date, lease.end_date, lease.number_leased]
+  SqlRunner.run(sql, values)
+  self.delete_by_id(lease.id)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM leases
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    lease = Lease.new(result)
+    return lease
+  end
+
+  def delete()
+    sql = "DELETE FROM leases
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.delete_by_id(id)
+    sql = "DELETE FROM leases
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
 
   def self.delete_all()
     sql = "DELETE FROM leases"

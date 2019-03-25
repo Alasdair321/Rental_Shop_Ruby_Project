@@ -291,6 +291,6 @@ lease4 = Lease.new({
   })
 
 lease4.save
-
+Lease.end_lease(4)
 # p Lease.find_all_leases_by_id(2)
 # p Lease.total_leased_equipment_id(2, "2019-03-31")
