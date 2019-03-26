@@ -1,0 +1,46 @@
+<div class="">
+  <a href="/lease/new-lease"><button type="button" name="button">New Lease</button></a>
+</div>
+<div class="">
+  <a href="/lease/end-lease"><button type="button" name="button">End Lease</button></a>
+</div>
+<div class="">
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Surname</th>
+        <th>Number</th>
+        <th>Email</th>
+        <th>Type</th>
+        <th>Size</th>
+        <th>Cost</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% @current_leases.each do |lease| %>
+      <tr>
+        <td><% lease.surname %></td>
+        <td><% lease.contact_number %></td>
+        <td><% lease.contact_email %></td>
+        <td><% lease.type %></td>
+        <td><% lease.size %></td>
+        <td><% lease.cost %></td>
+        <td><% lease.start_date %></td>
+        <td><% lease.end_date %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<% @students.each do |student| %>
+
+<div class="student">
+  <h3><a href="/students/<%= student.id %>"><%= student.format_name %></a></h3>
+  <p>Age: <%= student.age %></p>
+  <p>House: <%= student.house.name.capitalize %></p>

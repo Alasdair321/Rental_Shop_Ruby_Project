@@ -1,6 +1,0 @@
-require('sinatra')
-require('sinatra/contrib/all')
-require_relative('models/customer')
-require_relative('models/equipment')
-require_relative('models/lease')
-also_reload('./models/*')

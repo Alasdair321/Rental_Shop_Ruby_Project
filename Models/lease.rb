@@ -1,4 +1,4 @@
-require_relative('../DB/sql_runner')
+require_relative('../db/sql_runner')
 
 class Lease
 
@@ -157,4 +157,29 @@ class Lease
     sql = "DELETE FROM leases"
     SqlRunner.run(sql)
   end
+
+  # def self.all()
+  #   sql = "SELECT customers.first_name,
+  #   customers.surname,
+  #   customers.contact_number,
+  #   customers.contact_email,
+  #   equipment.type,
+  #   equipment.size,
+  #   equipment.cost,
+  #   leases.start_date,
+  #   leases.end_date
+  #   FROM leases
+  #   INNER JOIN customers
+  #   ON leases.customer_id = customers.id
+  #   INNER JOIN equipment
+  #   ON leases.equipment_id = equipment.id"
+  #   lease_data = SqlRunner.run(sql)
+  #   leases = map_items(lease_data)
+  #   return leases
+  # end
+  #
+  # def self.map_items(lease_data)
+  #   return lease_data.map { |lese| Lease.new(lese) }
+  # end
+
 end
