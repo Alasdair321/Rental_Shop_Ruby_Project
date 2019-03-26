@@ -85,4 +85,8 @@ class Customer
     return customer
   end
 
+  def format_name
+    return "#{@first_name.capitalize} #{@surname.capitalize}"
+  end
+
 end
