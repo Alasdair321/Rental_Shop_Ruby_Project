@@ -1,8 +1,11 @@
+require_relative('../db/sql_runner')
+
 class CurrentLeases
 
-  attr_reader :surname, :contact_number, :contact_email, :type, :size, :cost, :start_date, :end_date
+  attr_reader :first_name, :surname, :contact_number, :contact_email, :type, :size, :cost, :start_date, :end_date
 
   def initialize(options)
+    @first_name = options["first_name"]
     @surname = options["surname"]
     @contact_number = options["contact_number"]
     @contact_email = options["contact_email"]
@@ -13,13 +16,13 @@ class CurrentLeases
     @end_date = options["end_date"]
   end
 
-  def self.all()
+  def self.all_leases()
     sql = "SELECT customers.first_name,
     customers.surname,
     customers.contact_number,
     customers.contact_email,
     equipment.type,
-    quipment.size,
+    equipment.size,
     equipment.cost,
     leases.start_date,
     leases.end_date
@@ -34,7 +37,7 @@ class CurrentLeases
   end
 
   def self.map_items(leases)
-    return leases.map { |lease| Lease_log.new(lease) }
+    return leases.map { |lease| CurrentLeases.new(lease) }
   end
 
 end

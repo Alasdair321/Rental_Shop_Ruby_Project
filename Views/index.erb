@@ -23,24 +23,17 @@
 
       <% @current_leases.each do |lease| %>
       <tr>
-        <td><% lease.surname %></td>
-        <td><% lease.contact_number %></td>
-        <td><% lease.contact_email %></td>
-        <td><% lease.type %></td>
-        <td><% lease.size %></td>
-        <td><% lease.cost %></td>
-        <td><% lease.start_date %></td>
-        <td><% lease.end_date %></td>
+        <td><%= lease.first_name %></td>
+        <td><%= lease.surname %></td>
+        <td><%= lease.contact_number %></td>
+        <td><%= lease.contact_email %></td>
+        <td><%= lease.type %></td>
+        <td><%= lease.size %></td>
+        <td><%= lease.cost %></td>
+        <td><%= lease.start_date %></td>
+        <td><%= lease.end_date %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-
-
-<% @students.each do |student| %>
-
-<div class="student">
-  <h3><a href="/students/<%= student.id %>"><%= student.format_name %></a></h3>
-  <p>Age: <%= student.age %></p>
-  <p>House: <%= student.house.name.capitalize %></p>
