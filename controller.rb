@@ -11,22 +11,27 @@ get '/leases' do
   erb(:index)
 end
 
+
 get '/leases/new-lease' do
   @customers = Customer.all
   @equipment = Equipment.all
   erb(:new_lease)
 end
-
+#does not work
 post '/leases' do
   Lease.new(params).save
   erb(:create_lease)
 end
-#
-# get '/leases/new-customer' do
-#   erb(:new_customer)
-# end
-#
-# post '/leases' do
-#   Customer.new(params)
-#   erb(:create_customer)
-# end
+
+get '/leases/all-equipment' do
+  @all_equipment = Equipment.all
+  erb(:new_equipment)
+end
+
+get '/leases/new-equipment' do
+  erb(:create_equipment)
+end
+
+post '/leases/all-equipment' do
+
+end
