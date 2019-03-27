@@ -1,40 +1,42 @@
 <h1>Create New Lease</h1>
 <form class="" action="/leases" method="post">
-  <div class="">
-    <label for="customer-id">Customer: </label>
-    <select class="" name="customer_id" id="customer-id">
-      <% for customer in @customers do %>
-      <option value="<% customer.id %>"><%= customer.format_name %></option>
-      <% end %>
-    </select>
-  </div>
-  <div class="">
-    <label for="equipment-id">Equipment: </label>
-    <select class="" name="equipment_id" id="equipment-id">
-      <% for equipmentpiece in @equipment do %>
-      <option value="<% equipmentpiece.id %>"><%= equipmentpiece.type %> ; size: <%= equipmentpiece.size %></option>
-      <% end %>
-    </select>
-  </div>
-  <div class="">
-    <label for="start-date">Start Date: </label>
-    <input type="date" name="start_date" id="start-date">
-  </div>
-  <div class="">
-    <label for="end-date">End Date: </label>
-    <input type="date" name="end_date" id="end-date">
-  </div>
-  <div class="">
-    <label for="number-leased">Number Requested: </label>
-    <input type="number" name="number_leased" id="number-leased">
-  </div>
+<table>
+  <tbody>
+    <tr>
+      <td><label for="customer-id">Customer: </label></td>
+      <td>
+        <select class="" name="customer_id" id="customer-id">
+          <% for customer in @customers do %>
+          <option value="<% customer.id %>"><%= customer.format_name %></option>
+          <% end %>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="equipment-id">Equipment: </label></td>
+      <td>
+        <select class="" name="equipment_id" id="equipment-id">
+          <% for equipmentpiece in @equipment do %>
+          <option value="<% equipmentpiece.id %>"><%= equipmentpiece.type %> ; size: <%= equipmentpiece.size %></option>
+          <% end %>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="start-date">Start Date: </label></td>
+      <td><input type="date" name="start_date" id="start-date"></td>
+    </tr>
+    <tr>
+      <td><label for="end-date">End Date: </label></td>
+      <td><input type="date" name="end_date" id="end-date"></td>
+    </tr>
+    <tr>
+      <td><label for="number-leased">Number Requested: </label></td>
+      <td><input type="number" name="number_leased" id="number-leased"></td>
+    </tr>
+  </tbody>
+</table>
   <div class="">
     <input type="submit" name="" value="Create Lease">
   </div>
 </form>
-
-
-<!-- <div class="form-el">
-<label for="first_name">First Name:</label>
-<input type="text" name="first_name" id="first_name"/>
-</div> -->
