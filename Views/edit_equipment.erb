@@ -1,0 +1,23 @@
+<form class="" action="/leases/all-equipment/<%=@equipment.id%>" method="post">
+  <table>
+    <tbody>
+      <tr>
+        <td><label for="type">Type of Equipment</label></td>
+        <td><input type="text" name="type" id="type" value="<%=@equipment.type%>"></td>
+      </tr>
+      <tr>
+        <td><label for="size">Size of Equipment</label></td>
+        <td><input type="text" name="size" id="size" value="<%=@equipment.size%>"></td>
+      </tr>
+      <tr>
+        <td><label for="total-quantity">Stock Quantity</label></td>
+        <td><input type="number" name="total_quantity" id="total-quantity" value="<%=@equipment.total_quantity%>" min="0"></td>
+      </tr>
+      <tr>
+        <td><label for="cost">Cost</label></td>
+        <td>£<input type="number" name="cost" id="cost" value="<%=@equipment.cost%>" min="0"></td>
+      </tr>
+    </tbody>
+  </table>
+  <input type="submit" value="Update Equipment Details">
+</form>

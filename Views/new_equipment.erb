@@ -3,6 +3,7 @@
   <a href="/leases/new-equipment">Add Equipment To Stock</a>
 
 </div>
+
 <div class="">
 
   <table>
@@ -24,7 +25,7 @@
         <td>£<%= equipment.cost%>.00</td>
         <td>£<%= equipment.cost.to_i / 10.0 %>0</td>
         <td><a href="/leases/all-equipment/<%=equipment.id%>/edit">Edit Item</a></td>
-        <td><a href="/leases/all-equipment/<%=equipment.id%>/delete">Delete Item</a></td>
+        <td><form action="/leases/all-equipment/<%=equipment.id%>/delete" method="POST"><input type="submit" value="Delete"></form></td>
       </tr>
       <% end %>
     </tbody>

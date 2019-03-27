@@ -36,3 +36,25 @@ post '/leases/all-equipment' do
   Equipment.new(params).save
   redirect to("/leases/all-equipment")
 end
+
+get '/leases/all-equipment/:id/edit' do
+  @equipment = Equipment.find(params['id'])
+  erb(:edit_equipment)
+end
+
+post '/leases/all-equipment/:id' do
+  equipment = Equipment.new(params)
+  equipment.update
+  redirect to ("/leases/all-equipment")
+end
+
+post '/leases/all-equipment/:id/delete' do
+  equipment = Equipment.find(params['id'])
+  equipment.delete
+  redirect to ("/leases/all-equipment")
+end
+
+get '/leases/all-customers' do
+  @customers = Customer.all
+  erb(:new_customer)
+end
