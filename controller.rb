@@ -33,5 +33,6 @@ get '/leases/new-equipment' do
 end
 
 post '/leases/all-equipment' do
-
+  Equipment.new(params).save
+  redirect to("/leases/all-equipment")
 end

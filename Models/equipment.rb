@@ -86,10 +86,7 @@ class Equipment
     return equipment
   end
 
-  # available = Equipment.availability(@equipment_id, @number_leased, total_leased)
-  def self.availability(e_id, num_requested, leased_at_time)
 
-  end
 
 
 end

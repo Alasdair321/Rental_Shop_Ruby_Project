@@ -1,4 +1,4 @@
-<h1>All Equipment</h1>
+<h3>All Equipment</h3>
 <div class="">
   <a href="/leases/new-equipment">Add Equipment To Stock</a>
 
@@ -18,12 +18,13 @@
     <tbody>
       <% for equipment in @all_equipment do %>
       <tr>
-        <td><%= equipment.type.capitalize%></td>
-        <td><%= equipment.size.capitalize%></td>
+        <td><%= equipment.type%></td>
+        <td><%= equipment.size%></td>
         <td><%= equipment.total_quantity%></td>
         <td>£<%= equipment.cost%>.00</td>
         <td>£<%= equipment.cost.to_i / 10.0 %>0</td>
         <td><a href="/leases/all-equipment/<%=equipment.id%>/edit">Edit Item</a></td>
+        <td><a href="/leases/all-equipment/<%=equipment.id%>/delete">Delete Item</a></td>
       </tr>
       <% end %>
     </tbody>
