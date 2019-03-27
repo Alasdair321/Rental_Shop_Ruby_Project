@@ -60,10 +60,17 @@ get '/leases/all-customers' do
 end
 
 get ('/leases/new-customer') do
+  erb(:create_customer)
+end
 
+post ('/leases/all-customers') do
+  customer = Customer.new(params)
+  customer.save
+  redirect to ("/leases/all-customers")
 end
 
 get ('/leases/all-customers/:id/edit') do
+  @customer = Customer.find(params['id'])
 
 end
 
