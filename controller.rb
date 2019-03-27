@@ -4,6 +4,7 @@ require_relative('models/customer.rb')
 require_relative('models/equipment.rb')
 require_relative('models/lease.rb')
 require_relative('models/currentleases.rb')
+require_relative('models/leaselog.rb')
 also_reload('./models/*')
 
 get '/leases' do
@@ -84,4 +85,10 @@ post ('/leases/all-customers/:id/delete') do
   customer = Customer.find(params['id'])
   customer.delete
   redirect to ("/leases/all-customers")
+end
+
+get ('leases/all-leases') do
+  @current_leases = CurrentLeases.all_leases
+
+  erb(:all_leases)
 end
