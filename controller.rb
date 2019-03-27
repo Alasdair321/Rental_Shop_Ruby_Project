@@ -58,3 +58,19 @@ get '/leases/all-customers' do
   @customers = Customer.all
   erb(:new_customer)
 end
+
+get ('/leases/new-customer') do
+
+end
+
+get ('/leases/all-customers/:id/edit') do
+
+end
+
+post ('/leases/all-customers/:id') do
+
+end
+
+post ('/leases/all-customers/:id/delete') do
+
+end

@@ -1,0 +1,33 @@
+
+<div class="">
+  <a href="/leases/new-customer">Add Customer</a>
+</div>
+<div class="">
+  <h3>All Customers</h3>
+</div>
+<div class="">
+
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Surname</th>
+        <th>Phone</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for customer in @customers do %>
+      <tr>
+        <td><%= customer.first_name%></td>
+        <td><%= customer.surname%></td>
+        <td><%= customer.contact_number%></td>
+        <td><%= customer.contact_email%></td>
+        <td><a href="/leases/all-customers/<%=customer.id%>/edit">Edit Details</a></td>
+        <td><form action="/leases/all-customers/<%=customer.id%>/delete" method="POST"><input type="submit" value="Delete Customer"></form></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
