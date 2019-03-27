@@ -71,13 +71,17 @@ end
 
 get ('/leases/all-customers/:id/edit') do
   @customer = Customer.find(params['id'])
-
+  erb(:edit_customer)
 end
 
 post ('/leases/all-customers/:id') do
-
+  customer = Customer.new(params)
+  customer.update
+  redirect to ("/leases/all-customers")
 end
 
 post ('/leases/all-customers/:id/delete') do
-
+  customer = Customer.find(params['id'])
+  customer.delete
+  redirect to ("/leases/all-customers")
 end

@@ -66,7 +66,7 @@ class Customer
   end
 
   def self.all()
-    sql = "SELECT * FROM customers"
+    sql = "SELECT * FROM customers ORDER BY id ASC"
     customer_data = SqlRunner.run(sql)
     customer = map_items(customer_data)
     return customer

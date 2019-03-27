@@ -67,7 +67,7 @@ class Equipment
   end
 
   def self.all()
-    sql = "SELECT * FROM equipment"
+    sql = "SELECT * FROM equipment ORDER BY id ASC"
     equipment_data = SqlRunner.run(sql)
     equipment = map_items(equipment_data)
     return equipment
