@@ -1,0 +1,177 @@
+
+body {
+  font-family: Ubuntu;
+  background-color: #71A5AA;
+  margin: 0;
+  padding: 0;
+}
+
+nav button {
+  color: black;
+  background-color: #FF781F;
+  border-radius: 30px 30px 30px 30px;
+  width: 130px;
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 1.0em;
+  border: 3px solid black;
+  box-shadow: 5px 5px 15px #A5D7D9;
+}
+
+nav button:hover {
+  background-color: #F7B07B;
+  box-shadow: 5px 5px 15px #A5D7D9;
+  color: black;
+  transform: translateY(4px);
+}
+
+header {
+padding: 20px;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid black;
+  font-size: 0.8em;
+  word-break: normal;
+}
+
+thead th {
+  text-align: center;
+  height: 30px;
+}
+
+/* .summary-table thead th:nth-child(1) {
+  width: 7%;
+}
+.summary-table thead th:nth-child(2) {
+  width: 7%;
+}
+.summary-table thead th:nth-child(3) {
+  width: 10%;
+}
+.summary-table thead th:nth-child(4) {
+  width: 10%;
+}
+.summary-table thead th:nth-child(5) {
+  width: 8%;
+}
+.summary-table thead th:nth-child(6) {
+  width: 4%;
+}
+.summary-table thead th:nth-child(7) {
+  width: 5%;
+}
+.summary-table thead th:nth-child(8) {
+  width: 5%;
+}
+.summary-table thead th:nth-child(9) {
+  width: 8%;
+}
+.summary-table thead th:nth-child(10) {
+  width: auto;
+} */
+
+
+
+tbody tr {
+  height: 30px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #85DFE5;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #B6E4E7;
+}
+
+td {
+  text-align: center;
+}
+
+.pageheader{
+  text-align: center;
+}
+
+.brand {
+  margin-top: 0;
+  font-size: 50px;
+}
+
+.navigation {
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  width: 80%;
+  background-color: #E1FEFF;
+}
+
+.content {
+  min-height: 500px;
+  max-width: auto;
+  padding-top: 10px;
+}
+
+.quickbutton {
+  background-color: #FF781F;
+  border-radius: 30px 30px 30px 30px;
+  font-weight: 500;
+  font-size: 1.0em;
+  border: 3px solid black;
+  width: 260px;
+  height: 100px;
+  font-weight: 500;
+  font-size: 1.5em;
+  box-shadow: 5px 5px 15px #A5D7D9;
+}
+
+.quickbutton:hover {
+  background-color: #F7B07B;
+  box-shadow: 5px 5px 15px #A5D7D9;
+  color: black;
+  transform: translateY(4px);
+}
+
+.buttoncontainer {
+  text-align: center;
+  margin: 0px;
+}
+
+.buttonposition {
+  display: inline-block;
+  margin: 0px 40px 15px 40px;
+}
+
+.container-data {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-btn {
+  background-color: #FF781F;
+  border-radius: 30px 30px 30px 30px;
+  font-weight: 500;
+  font-size: 1.0em;
+  border: 3px solid black;
+  width: 80px;
+  height: 25px;
+  font-weight: 500;
+  font-size: 0.8em;
+  box-shadow: 5px 5px 15px #A5D7D9;
+}
+
+.table-btn:hover {
+  background-color: #F7B07B;
+  box-shadow: 5px 5px 15px #A5D7D9;
+  color: black;
+  transform: translateY(2px);
+}

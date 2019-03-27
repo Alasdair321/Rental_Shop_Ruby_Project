@@ -1,16 +1,17 @@
-<div class="">
-  <a href="/leases/new-customer"><button type="button" name="button">Add Customer</button></a>
+<div class="buttoncontainer">
+  <div class="buttonposition">
+    <a href="/leases/new-customer"><button type="button" name="button" class="quickbutton">ADD CUSTOMER</button></a>
+  </div>
+  <div class="buttonposition">
+    <a href="/leases/new-lease"><button type="button" name="button" class="quickbutton">NEW LEASE</button></a>
+  </div>
 </div>
 
-<div class="">
-  <a href="/leases/new-lease"><button type="button" name="button">New Lease</button></a>
-</div>
 
-<div class="">
+<div class="container-data">
   <h3>Summary of Current Leases</h3>
-</div>
-<div class="">
-  <table>
+
+  <table class="summary-table">
     <thead>
       <tr>
         <th>First Name</th>
@@ -23,6 +24,7 @@
         <th>Number Leased</th>
         <th>Start Date</th>
         <th>End Date</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -39,7 +41,11 @@
         <td><%= lease.number_leased %></td>
         <td><%= lease.start_date %></td>
         <td><%= lease.end_date %></td>
-        <td><form action="/leases/all-leases/<%=lease.id%>/end" method="POST"><input type="submit" value="End Lease"></form></td>
+        <td>
+          <form action="/leases/all-leases/<%=lease.id%>/end" method="POST">
+            <input type="submit" name="button" value="End Lease" class="table-btn">
+        </form>
+        </td>
       </tr>
       <% end %>
     </tbody>
