@@ -7,7 +7,7 @@
       <td>
         <select class="" name="customer_id" id="customer-id">
           <% for customer in @customers do %>
-          <option value="<% customer.id %>"><%= customer.format_name %></option>
+          <option value="<%= customer.id %>"><%= customer.format_name %></option>
           <% end %>
         </select>
       </td>
@@ -17,7 +17,7 @@
       <td>
         <select class="" name="equipment_id" id="equipment-id">
           <% for equipmentpiece in @equipment do %>
-          <option value="<% equipmentpiece.id %>"><%= equipmentpiece.type %> ; size: <%= equipmentpiece.size %></option>
+          <option value="<%= equipmentpiece.id %>"><%= equipmentpiece.type %> ; size: <%= equipmentpiece.size %></option>
           <% end %>
         </select>
       </td>
@@ -32,7 +32,7 @@
     </tr>
     <tr>
       <td><label for="number-leased">Number Requested: </label></td>
-      <td><input type="number" name="number_leased" id="number-leased"></td>
+      <td><input type="number" name="number_leased" id="number-leased" value="1"></td>
     </tr>
   </tbody>
 </table>

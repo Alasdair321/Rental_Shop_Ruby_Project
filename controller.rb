@@ -17,10 +17,10 @@ get '/leases/new-lease' do
   @equipment = Equipment.all
   erb(:new_lease)
 end
-#does not work
+
 post '/leases' do
-  Lease.new(params).save
-  erb(:create_lease)
+  @statement = Lease.new(params).save
+  redirect to ('/leases')
 end
 
 
