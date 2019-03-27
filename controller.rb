@@ -20,10 +20,8 @@ end
 
 post '/leases' do
   @statement = Lease.new(params).save
-  redirect to ('/leases')
+  erb(:create_lease)
 end
-
-
 
 get '/leases/all-equipment' do
   @all_equipment = Equipment.all
@@ -97,4 +95,8 @@ end
 post ('/leases/all-leases/:id/end') do
   Lease.end_lease(params['id'])
   redirect to ("/leases/all-leases")
+end
+
+get ('/leases/help') do
+  erb(:help)
 end

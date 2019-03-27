@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+# require('pry')
 
 class Lease
 
@@ -26,14 +27,15 @@ class Lease
         lease_date_range = date_range_array(lease.start_date, lease.end_date)
         for date_lease_object in lease_date_range
           if date == date_lease_object #if proposed date matches other lease date then count + 1
-            counter += 1
+            counter += lease.number_leased.to_i
           end
         end
       end
       counter_array.push(counter) #adds counted instances to counter array
     end
+    available = Equipment.find(@equipment_id).total_quantity.to_i - counter_array.max
     #check if difference in stock and leased is greater or equal to requested amount:
-    if Equipment.find(@equipment_id).total_quantity.to_i - counter_array.max >= @number_leased.to_i
+    if available >= @number_leased.to_i
       #if true then save lease and return string reservation successful
         sql = "INSERT INTO leases
       (

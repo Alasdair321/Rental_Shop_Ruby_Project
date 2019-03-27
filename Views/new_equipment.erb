@@ -1,6 +1,7 @@
 
 <div class="">
-  <a href="/leases/new-equipment">Add Equipment To Stock</a>
+  <a href="/leases/new-equipment"><button type="button" name="button">Add Equipment To Stock</button></a>
+
 </div>
 <div class="">
   <h3>All Equipment</h3>
@@ -25,7 +26,7 @@
         <td><%= equipment.total_quantity%></td>
         <td>£<%= equipment.cost%>.00</td>
         <td>£<%= equipment.cost.to_i / 10.0 %>0</td>
-        <td><a href="/leases/all-equipment/<%=equipment.id%>/edit">Edit Item</a></td>
+        <td><a href="/leases/all-equipment/<%=equipment.id%>/edit"><button type="button" name="button">Edit</button></a></td>
         <td><form action="/leases/all-equipment/<%=equipment.id%>/delete" method="POST"><input type="submit" value="Delete"></form></td>
       </tr>
       <% end %>

@@ -4,8 +4,4 @@ require_relative('./models/lease.rb')
 require_relative('./models/currentleases.rb')
 require_relative('./models/customer.rb')
 
-lease = LeaseLog.all_leases
-
-
- # Customer.all
-p Equipment.all
+p Lease.find_all_leases_by_id(4)
