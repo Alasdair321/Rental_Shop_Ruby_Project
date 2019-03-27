@@ -4,14 +4,13 @@ require_relative('models/customer.rb')
 require_relative('models/equipment.rb')
 require_relative('models/lease.rb')
 require_relative('models/currentleases.rb')
-require_relative('models/leaselog.rb')
+require_relative('models/leaseslog.rb')
 also_reload('./models/*')
 
 get '/leases' do
   @current_leases = CurrentLeases.all_leases
   erb(:index)
 end
-
 
 get '/leases/new-lease' do
   @customers = Customer.all
@@ -23,6 +22,8 @@ post '/leases' do
   Lease.new(params).save
   erb(:create_lease)
 end
+
+
 
 get '/leases/all-equipment' do
   @all_equipment = Equipment.all
@@ -87,8 +88,13 @@ post ('/leases/all-customers/:id/delete') do
   redirect to ("/leases/all-customers")
 end
 
-get ('leases/all-leases') do
+get ('/leases/all-leases') do
   @current_leases = CurrentLeases.all_leases
-
+  @lease_log = LeaseLog.all_leases
   erb(:all_leases)
+end
+
+post ('/leases/all-leases/:id/end') do
+  Lease.end_lease(params['id'])
+  redirect to ("/leases/all-leases")
 end

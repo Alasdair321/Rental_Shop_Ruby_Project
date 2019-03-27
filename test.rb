@@ -1,5 +1,5 @@
-require_relative('./models/currentleases.rb')
+require_relative('./models/leaseslog.rb')
 
-lease = CurrentLeases.all_leases
+lease = LeaseLog.all_leases
 
-p lease 
+p lease

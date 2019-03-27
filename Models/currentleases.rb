@@ -2,9 +2,10 @@ require_relative('../db/sql_runner')
 
 class CurrentLeases
 
-  attr_reader :first_name, :surname, :contact_number, :contact_email, :type, :size, :cost, :start_date, :end_date
+  attr_reader :id, :first_name, :surname, :contact_number, :contact_email, :type, :size, :cost, :number_leased, :start_date, :end_date
 
   def initialize(options)
+    @id = options["id"]
     @first_name = options["first_name"]
     @surname = options["surname"]
     @contact_number = options["contact_number"]
@@ -12,18 +13,22 @@ class CurrentLeases
     @type = options["type"]
     @size = options["size"]
     @cost = options["cost"]
+    @number_leased = options["number_leased"]
     @start_date = options["start_date"]
     @end_date = options["end_date"]
   end
 
   def self.all_leases()
-    sql = "SELECT customers.first_name,
+    sql = "SELECT
+    leases.id,
+    customers.first_name,
     customers.surname,
     customers.contact_number,
     customers.contact_email,
     equipment.type,
     equipment.size,
     equipment.cost,
+    leases.number_leased,
     leases.start_date,
     leases.end_date
     FROM leases

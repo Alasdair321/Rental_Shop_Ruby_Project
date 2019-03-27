@@ -1,8 +1,5 @@
 <div class="">
-  <a href="/leases/new-lease"><button type="button" name="button">New Lease</button></a>
-</div>
-<div class="">
-  <h3>Summary of Current Leases</h3>
+  <h3>Current Leases</h3>
 </div>
 <div class="">
   <table>
@@ -35,6 +32,44 @@
         <td><%= lease.start_date %></td>
         <td><%= lease.end_date %></td>
         <td><form action="/leases/all-leases/<%=lease.id%>/end" method="POST"><input type="submit" value="End Lease"></form></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="">
+  <h3>Ended Leases</h3>
+</div>
+<div class="">
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Surname</th>
+        <th>Number</th>
+        <th>Email</th>
+        <th>Type</th>
+        <th>Size</th>
+        <th>Cost</th>
+        <th>Number Leased</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% @lease_log.each do |leaselog| %>
+      <tr>
+        <td><%= leaselog.first_name %></td>
+        <td><%= leaselog.surname %></td>
+        <td><%= leaselog.contact_number %></td>
+        <td><%= leaselog.contact_email %></td>
+        <td><%= leaselog.type %></td>
+        <td><%= leaselog.size %></td>
+        <td><%= leaselog.cost %></td>
+        <td><%= leaselog.number_leased %></td>
+        <td><%= leaselog.start_date %></td>
+        <td><%= leaselog.end_date %></td>
       </tr>
       <% end %>
     </tbody>
