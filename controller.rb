@@ -100,3 +100,15 @@ end
 get ('/leases/help') do
   erb(:help)
 end
+
+get ('/leases/all-customers/:id/customer-leases') do
+  @customer_leases = CurrentLeases.all_leases_by_customer(params['id'])
+  @customer = Customer.find(params['id'])
+  erb(:all_leases_customerid)
+end
+
+
+post ('/leases/all-customers/:leaseid/:customerid') do
+  Lease.end_lease(params['leaseid'])
+  redirect to ("/leases/all-customers/#{params['customerid']}/customer-leases")
+end

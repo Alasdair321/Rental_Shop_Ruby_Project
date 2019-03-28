@@ -25,15 +25,15 @@
         </tr>
         <tr>
           <td><label for="start-date">Start Date: </label></td>
-          <td><input type="date" name="start_date" id="start-date"></td>
+          <td><input type="date" name="start_date" id="start-date" value="<%=Date::today%>" min=<%=Date::today%>></td>
         </tr>
         <tr>
           <td><label for="end-date">End Date: </label></td>
-          <td><input type="date" name="end_date" id="end-date"></td>
+          <td><input type="date" name="end_date" id="end-date" value="<%=Date::today + 7%>" min=<%=Date::today%>></td>
         </tr>
         <tr>
           <td><label for="number-leased">Number Requested: </label></td>
-          <td><input type="number" name="number_leased" id="number-leased" value="1"></td>
+          <td><input type="number" name="number_leased" id="number-leased" value="1" min=1></td>
         </tr>
       </tbody>
     </table>

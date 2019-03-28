@@ -45,4 +45,33 @@ class CurrentLeases
     return leases.map { |lease| CurrentLeases.new(lease) }
   end
 
+  def self.all_leases_by_customer(id)
+    sql = "SELECT
+    leases.id,
+    customers.first_name,
+    customers.surname,
+    customers.contact_number,
+    customers.contact_email,
+    equipment.type,
+    equipment.size,
+    equipment.cost,
+    leases.number_leased,
+    leases.start_date,
+    leases.end_date
+    FROM leases
+    INNER JOIN customers
+    ON leases.customer_id = customers.id
+    INNER JOIN equipment
+    ON leases.equipment_id = equipment.id
+    WHERE leases.customer_id = $1"
+    values = [id]
+    leases = SqlRunner.run(sql, values)
+    lease_array = map_items(leases)
+    return lease_array
+  end
+
+  def format_name
+    return "#{@first_name.capitalize} #{@surname.capitalize}"
+  end
+
 end
