@@ -1,25 +1,35 @@
-<h3>New Equipment</h3>
+<div class="container-data">
+
+<h2>New Equipment</h2>
 
 <form class="" action="/leases/all-equipment" method="post">
   <table>
     <tbody>
       <tr>
-        <td><label for="type">Type of Equipment</label></td>
-        <td><input type="text" name="type" id="type" value=""></td>
+        <td class="table-emphasis-text"><label for="type">Type of Equipment</label></td>
+        <td><input type="text" name="type" id="type" value="" required></td>
       </tr>
       <tr>
-        <td><label for="size">Size of Equipment</label></td>
-        <td><input type="text" name="size" id="size" value=""></td>
+        <td class="table-emphasis-text"><label for="size">Size of Equipment</label></td>
+        <td><input type="text" name="size" id="size" value="" required></td>
       </tr>
       <tr>
-        <td><label for="total-quantity">Stock Quantity</label></td>
-        <td><input type="number" name="total_quantity" id="total-quantity" value="" min="0"></td>
+        <td class="table-emphasis-text"><label for="total-quantity">Stock Quantity</label></td>
+        <td><input type="number" name="total_quantity" id="total-quantity" value="" min="0" required></td>
       </tr>
       <tr>
-        <td><label for="cost">Cost</label></td>
-        <td>£<input type="number" name="cost" id="cost" value="" min="0"></td>
+        <td class="table-emphasis-text"><label for="cost">Cost</label></td>
+        <td>£<input type="number" name="cost" id="cost" value="" min="0" required></td>
       </tr>
     </tbody>
   </table>
-  <input type="submit" value="Add Equipment">
+  <div class="buttoncontainer2">
+    <div class="buttonposition">
+      <input type="submit" value="Add Equipment" class="quickbutton">
+
+    </div>
+  </div>
 </form>
+<h3><i class="arrow left"></i> <a href="/leases/all-equipment">Back</a></h3>
+
+</div>

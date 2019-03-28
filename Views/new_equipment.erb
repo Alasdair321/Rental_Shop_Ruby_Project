@@ -1,13 +1,10 @@
 
-<div class="">
-  <a href="/leases/new-equipment"><button type="button" name="button">Add Equipment To Stock</button></a>
+<div class="buttoncontainer">
+  <a href="/leases/new-equipment"><button type="button" name="button" class="quickbutton2">Add Equipment To Stock</button></a>
+</div>
 
-</div>
-<div class="">
-  <h3>All Equipment</h3>
-</div>
 <div class="container-data">
-
+  <h2>All Equipment in Stock</h2>
   <table>
     <thead>
       <tr>
@@ -29,12 +26,14 @@
         <td>£<%= equipment.cost%>.00</td>
         <td>£<%= equipment.cost.to_i / 10.0 %>0</td>
         <td>
-          <button type="button" name="button" class="table-btn">
-          <a href="/leases/all-equipment/<%=equipment.id%>/edit">Edit</a>
+          <a href="/leases/all-equipment/<%=equipment.id%>/edit">
+            <button type="button" name="button" class="table-btn">
+            Edit
           </button>
+          </a>
         </td>
         <td>
-          <form action="/leases/all-equipment/<%=equipment.id%>/delete" method="POST">
+          <form onsubmit="return confirm('Are you sure you want to Delete?')" action="/leases/all-equipment/<%=equipment.id%>/delete" method="POST">
             <input type="submit" value="Delete" name="button" class="table-btn">
           </form>
         </td>
@@ -42,5 +41,6 @@
       <% end %>
     </tbody>
   </table>
+  <h3><i class="arrow up"></i> <a href="#top">Top</a></h3>
 
 </div>

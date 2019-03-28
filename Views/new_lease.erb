@@ -1,10 +1,10 @@
 <div class="container-data">
-  <h1>Create New Lease</h1>
+  <h2>Create New Lease</h2>
   <form class="" action="/leases" method="post">
-    <table>
+    <table class="new-lease">
       <tbody>
         <tr>
-          <td><label for="customer-id">Customer: </label></td>
+          <td class="table-emphasis-text"><label for="customer-id">Customer: </label></td>
           <td>
             <select class="" name="customer_id" id="customer-id">
               <% for customer in @customers do %>
@@ -14,13 +14,13 @@
           </td>
         </tr>
         <tr>
-          <td><label for="equipment-id">Equipment: </label></td>
+          <td class="table-emphasis-text"><label for="equipment-id">Equipment: </label></td>
           <td>
             <div class="">
 
               <% index = 0 %>
               <% for type in @types %>
-              <p><%= type.type %> </p>
+              <p class="table-emphasis-text"><%= type.type.capitalize %> </p>
               <% for size in @sizes[index] %>
               <input type="radio" id="equipment-id<%=size.id%>" name="equipment_id_<%= index %>" value="<%= size.id %>">
               <label for="equipment-id<%=size.id%>"><%= size.size %></label>
@@ -32,21 +32,25 @@
           </td>
         </tr>
         <tr>
-          <td><label for="start-date">Start Date: </label></td>
+          <td class="table-emphasis-text"><label for="start-date">Start Date: </label></td>
           <td><input type="date" name="start_date" id="start-date" value="<%=Date::today%>" min=<%=Date::today%>></td>
         </tr>
         <tr>
-          <td><label for="end-date">End Date: </label></td>
+          <td class="table-emphasis-text"><label for="end-date">End Date: </label></td>
           <td><input type="date" name="end_date" id="end-date" value="<%=Date::today + 7%>" min=<%=Date::today%>></td>
         </tr>
         <tr>
-          <td><label for="number-leased">Number Requested: </label></td>
-          <td><input type="number" name="number_leased" id="number-leased" value="1" min=1></td>
+          <td class="table-emphasis-text"><label for="number-leased">Number Requested: </label></td>
+          <td><input class="number-input" type="number" name="number_leased" id="number-leased" value="1" min=1></td>
         </tr>
       </tbody>
     </table>
-    <div class="">
-      <input type="submit" name="" value="Create Lease">
+    <div class="buttoncontainer2">
+      <div class="buttonposition">
+        <input type="submit" name="" value="Create Lease" class="quickbutton">
+      </div>
     </div>
+    <h3><i class="arrow left"></i> <a href="/leases">Back</a></h3>
+
   </form>
 </div>

@@ -241,47 +241,24 @@ customer3 = Customer.new({
   "contact_number" => "06821937546",
   "contact_email" => "email3@email.com"
   })
-
 customer4 = Customer.new({
-  "first_name" => "A",
-  "surname" => "McArthur",
-  "contact_number" => "01347295027",
+  "first_name" => "Johnny",
+  "surname" => "Bravo",
+  "contact_number" => "06821937546",
   "contact_email" => "email4@email.com"
   })
 
-customer5 = Customer.new({
-  "first_name" => "B",
-  "surname" => "McArthur",
-  "contact_number" => "01347295027",
-  "contact_email" => "email5@email.com"
-  })
-
-customer6 = Customer.new({
-  "first_name" => "C",
-  "surname" => "McArthur",
-  "contact_number" => "01347295027",
-  "contact_email" => "email6@email.com"
-  })
-
-customer7 = Customer.new({
-  "first_name" => "D",
-  "surname" => "McArthur",
-  "contact_number" => "01347295027",
-  "contact_email" => "email7@email.com"
-  })
 
 customer1.save
 customer2.save
 customer3.save
 customer4.save
-customer5.save
-customer6.save
-customer7.save
+
 
 #leases-------------------------------------------------------------------------
 lease1 = Lease.new({
   "equipment_id" => ski_boots_3.id,
-  "customer_id" => customer2.id,
+  "customer_id" => customer1.id,
   "start_date" => "2019-03-24",
   "end_date" => "2019-03-31",
   "number_leased" => 1
@@ -299,58 +276,10 @@ lease2 = Lease.new({
 lease2.save
 lease3 = Lease.new({
   "equipment_id" => ski_boots_5.id,
-  "customer_id" => customer2.id,
+  "customer_id" => customer3.id,
   "start_date" => "2019-03-26",
   "end_date" => "2019-03-31",
   "number_leased" => 1
   })
 
 lease3.save
-lease4 = Lease.new({
-  "equipment_id" => ski_boots_6.id,
-  "customer_id" => customer2.id,
-  "start_date" => "2019-03-27",
-  "end_date" => "2019-03-31",
-  "number_leased" => 1
-  })
-
-lease4.save
-lease5 = Lease.new({
-  "equipment_id" => ski_boots_7.id,
-  "customer_id" => customer3.id,
-  "start_date" => "2019-03-28",
-  "end_date" => "2019-03-31",
-  "number_leased" => 1
-  })
-
-lease5.save
-lease6 = Lease.new({
-  "equipment_id" => ski_boots_8.id,
-  "customer_id" => customer3.id,
-  "start_date" => "2019-03-29",
-  "end_date" => "2019-03-31",
-  "number_leased" => 1
-  })
-
-lease6.save
-lease7 = Lease.new({
-  "equipment_id" => ski_boots_9.id,
-  "customer_id" => customer3.id,
-  "start_date" => "2019-03-28",
-  "end_date" => "2019-04-01",
-  "number_leased" => 1
-  })
-
-lease7.save
-lease8 = Lease.new({
-  "equipment_id" => ski_medium.id,
-  "customer_id" => customer3.id,
-  "start_date" => "2019-03-29",
-  "end_date" => "2019-04-02",
-  "number_leased" => 1
-  })
-
-lease8.save
-# Lease.end_lease(4)
-# p Lease.find_all_leases_by_id(2)
-# p Lease.total_leased_equipment_id(2, "2019-03-31")

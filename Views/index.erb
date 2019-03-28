@@ -9,7 +9,7 @@
 
 
 <div class="container-data">
-  <h3>Summary of Current Leases</h3>
+  <h2>Summary of Current Leases</h2>
 
   <table class="summary-table">
     <thead>
@@ -42,7 +42,7 @@
         <td><%= lease.start_date %></td>
         <td><%= lease.end_date %></td>
         <td>
-          <form action="/leases/all-leases/<%=lease.id%>/end" method="POST">
+          <form onsubmit="return confirm('Press OK to End Lease.')" action="/leases/all-leases/<%=lease.id%>/end" method="POST">
             <input type="submit" name="button" value="End Lease" class="table-btn">
         </form>
         </td>
@@ -50,4 +50,6 @@
       <% end %>
     </tbody>
   </table>
+  <h3><i class="arrow up"></i> <a href="#top">Top</a></h3>
+
 </div>

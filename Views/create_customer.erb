@@ -1,29 +1,35 @@
-<div class="">
-  <h3>Add New Customer</h3>
-</div>
-<div class="">
-  <form class="" action="/leases/all-customers" method="post">
-    <table>
-      <tbody>
-        <tr>
-          <td><label for="first-name">First Name: </label></td>
-          <td><input type="text" name="first_name" id="first-name" value=""></td>
-        </tr>
-        <tr>
-          <td><label for="surname">Surname: </label></td>
-          <td><input type="text" name="surname" id="surname" value=""></td>
-        </tr>
-        <tr>
-          <td><label for="contact-number">Phone: </label></td>
-          <td><input type="tel" name="contact_number" id="contact-number" value=""></td>
-        </tr>
-        <tr>
-          <td><label for="contact-email">Email: </label></td>
-          <td><input type="email" name="contact_email" id="contact-email" value=""></td>
-        </tr>
-      </tbody>
-    </table>
-    <input type="submit" value="Add Customer">
-  </form>
+<div class="container-data">
+  <h2>Add New Customer</h2>
+  <div class="">
+    <form class="" action="/leases/all-customers" method="post">
+      <table>
+        <tbody>
+          <tr>
+            <td class="table-emphasis-text"><label for="first-name">First Name: </label></td>
+            <td><input type="text" name="first_name" id="first-name" value="" required></td>
+          </tr>
+          <tr>
+            <td class="table-emphasis-text"><label for="surname">Surname: </label></td>
+            <td><input type="text" name="surname" id="surname" value="" required></td>
+          </tr>
+          <tr>
+            <td class="table-emphasis-text"><label for="contact-number">Phone: </label></td>
+            <td><input type="tel" name="contact_number" id="contact-number" value="" required></td>
+          </tr>
+          <tr>
+            <td class="table-emphasis-text"><label for="contact-email">Email: </label></td>
+            <td><input type="email" name="contact_email" id="contact-email" value="" required></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="buttoncontainer2">
+        <div class="buttonposition">
+          <input type="submit" value="Add Customer" class="quickbutton">
+        </div>
+      </div>
+      <h3><i class="arrow left"></i> <a href="/leases">Back</a></h3>
 
+    </form>
+
+  </div>
 </div>

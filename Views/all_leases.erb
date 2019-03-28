@@ -1,5 +1,14 @@
+<div class="buttoncontainer">
+  <div class="buttonposition">
+    <a href="/leases/new-customer"><button type="button" name="button" class="quickbutton">ADD CUSTOMER</button></a>
+  </div>
+  <div class="buttonposition">
+    <a href="/leases/new-lease"><button type="button" name="button" class="quickbutton">NEW LEASE</button></a>
+  </div>
+</div>
+
 <div class="container-data">
-  <h3>Current Leases</h3>
+  <h2>Current Leases</h2>
 
   <div class="summary-table">
     <table>
@@ -42,9 +51,9 @@
       </tbody>
     </table>
   </div>
-    <h3>Ended Leases</h3>
+    <h2>Ended Leases</h2>
   <div class="lease-log">
-    <table>
+    <table class="lease-log-table">
       <thead>
         <tr>
           <th>First Name</th>
@@ -77,5 +86,7 @@
         <% end %>
       </tbody>
     </table>
+    <h3><i class="arrow up"></i> <a href="#top">Top</a></h3>
+
   </div>
 </div>

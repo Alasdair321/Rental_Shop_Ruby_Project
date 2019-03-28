@@ -35,7 +35,8 @@ class CurrentLeases
     INNER JOIN customers
     ON leases.customer_id = customers.id
     INNER JOIN equipment
-    ON leases.equipment_id = equipment.id"
+    ON leases.equipment_id = equipment.id
+    ORDER BY first_name"
     leases = SqlRunner.run(sql)
     lease_array = map_items(leases)
     return lease_array

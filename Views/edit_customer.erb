@@ -1,30 +1,34 @@
-<div class="">
-  <h3>Edit Customer Details</h3>
+<div class="container-data">
+
+  <h2>Edit Customer Details</h2>
   <h2><%= @customer.format_name %></h2>
-</div>
-<div class="">
   <form class="" action="/leases/all-customers/<%= @customer.id %>" method="post">
     <table>
       <tbody>
         <tr>
-          <td><label for="first-name">First Name: </label></td>
+          <td class="table-emphasis-text"><label for="first-name">First Name: </label></td>
           <td><input type="text" name="first_name" id="first-name" value="<%= @customer.first_name %>"></td>
         </tr>
         <tr>
-          <td><label for="surname">Surname: </label></td>
+          <td class="table-emphasis-text"><label for="surname">Surname: </label></td>
           <td><input type="text" name="surname" id="surname" value="<%= @customer.surname %>"></td>
         </tr>
         <tr>
-          <td><label for="contact-number">Phone: </label></td>
+          <td class="table-emphasis-text"><label for="contact-number">Phone: </label></td>
           <td><input type="tel" name="contact_number" id="contact-number" value="<%= @customer.contact_number %>"></td>
         </tr>
         <tr>
-          <td><label for="contact-email">Email: </label></td>
+          <td class="table-emphasis-text"><label for="contact-email">Email: </label></td>
           <td><input type="email" name="contact_email" id="contact-email" value="<%= @customer.contact_email %>"></td>
         </tr>
       </tbody>
     </table>
-    <input type="submit" value="Update Customer Details">
+    <div class="buttoncontainer2">
+      <div class="buttonposition">
+        <input type="submit" value="Update Customer" class="quickbutton">
+      </div>
+    </div>
   </form>
+  <h3><i class="arrow left"></i> <a href="/leases/all-customers">Back</a></h3>
 
 </div>

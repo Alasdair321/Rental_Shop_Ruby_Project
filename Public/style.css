@@ -6,6 +6,16 @@ body {
   padding: 0;
 }
 
+input {
+  font-size: 1.2em;
+  padding: 0.1rem 0.5rem;
+}
+
+select {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
 a{
   color: black;
   text-decoration: none;
@@ -46,6 +56,12 @@ table {
   word-break: normal;
 }
 
+table .new-lease {
+  table-layout: fixed;
+}
+
+
+
 thead th {
   text-align: center;
   height: 30px;
@@ -53,36 +69,7 @@ thead th {
 
 /* .summary-table thead th:nth-child(1) {
   width: 7%;
-}
-.summary-table thead th:nth-child(2) {
-  width: 7%;
-}
-.summary-table thead th:nth-child(3) {
-  width: 10%;
-}
-.summary-table thead th:nth-child(4) {
-  width: 10%;
-}
-.summary-table thead th:nth-child(5) {
-  width: 8%;
-}
-.summary-table thead th:nth-child(6) {
-  width: 4%;
-}
-.summary-table thead th:nth-child(7) {
-  width: 5%;
-}
-.summary-table thead th:nth-child(8) {
-  width: 5%;
-}
-.summary-table thead th:nth-child(9) {
-  width: 8%;
-}
-.summary-table thead th:nth-child(10) {
-  width: auto;
 } */
-
-
 
 tbody tr {
   height: 30px;
@@ -98,6 +85,15 @@ tbody tr:nth-child(even) {
 
 td {
   text-align: center;
+}
+
+.table-emphasis-text {
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.lease-log {
+  width: 89%;
 }
 
 .pageheader{
@@ -146,9 +142,33 @@ td {
   transform: translateY(4px);
 }
 
+.quickbutton2 {
+  background-color: #FF781F;
+  border-radius: 30px 30px 30px 30px;
+  font-weight: 500;
+  font-size: 1.0em;
+  border: 3px solid black;
+  width: 300px;
+  height: 100px;
+  font-weight: 500;
+  font-size: 1.5em;
+  box-shadow: 5px 5px 15px #A5D7D9;
+}
+.quickbutton2:hover {
+  background-color: #F7B07B;
+  box-shadow: 5px 5px 15px #A5D7D9;
+  color: black;
+  transform: translateY(4px);
+}
+
 .buttoncontainer {
   text-align: center;
   margin: 0px;
+}
+.buttoncontainer2 {
+  text-align: center;
+  margin: 0px;
+  padding-top: 50px;
 }
 
 .buttonposition {
@@ -160,6 +180,7 @@ td {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 50px;
 }
 
 .table-btn {
@@ -188,4 +209,41 @@ td {
 
 .btn-another-lease {
   text-align: center;
+}
+
+.statement {
+  padding-top: 25px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.5em;
+}
+
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }

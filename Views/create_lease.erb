@@ -1,16 +1,16 @@
-<div class="">
+<div class="container-data">
 
 
-<div class="confirmation-container">
   <% for statement in @statements %>
-  <h5><%=statement%></h5>
+  <h3 class="statement"><%=statement%></h3>
   <% end %>
-  <div class="btn-another-lease">
-    <a href="/leases/new-lease">
-      <button type="button" name="button" class="quickbutton">
-        ADD ANOTHER LEASE
-      </button>
-    </a>
+  <div class="buttoncontainer2">
+    <div class="buttonposition">
+      <a href="/leases/new-lease">
+        <button type="button" name="button" class="quickbutton">
+          ADD ANOTHER LEASE
+        </button>
+      </a>
+    </div>
   </div>
-</div>
 </div>
