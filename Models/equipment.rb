@@ -86,7 +86,33 @@ class Equipment
     return equipment
   end
 
+  def self.types
+    sql = "SELECT type
+    FROM  (
+    SELECT DISTINCT ON (type) *
+    FROM   equipment
+    ) p
+    ORDER  BY id asc"
+    result = SqlRunner.run(sql)
+    equipment = map_items(result)
+    return equipment
+  end
 
+  def self.sizes_of_type
+    array_of_types = self.types
+    array_of_sizes = []
+    for type in array_of_types
+      item_name = type.type
+      sql = "SELECT size, id
+      FROM equipment
+      WHERE type = $1"
+      values = [item_name]
+      result = SqlRunner.run(sql, values)
+      sizes = map_items(result)
+      array_of_sizes.push(sizes)
+    end
+    return array_of_sizes
+  end
 
 
 end

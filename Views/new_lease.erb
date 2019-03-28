@@ -16,11 +16,19 @@
         <tr>
           <td><label for="equipment-id">Equipment: </label></td>
           <td>
-            <select class="" name="equipment_id" id="equipment-id">
-              <% for equipmentpiece in @equipment do %>
-              <option value="<%= equipmentpiece.id %>"><%= equipmentpiece.type %> ; size: <%= equipmentpiece.size %></option>
+            <div class="">
+
+              <% index = 0 %>
+              <% for type in @types %>
+              <p><%= type.type %> </p>
+              <% for size in @sizes[index] %>
+              <input type="radio" id="equipment-id<%=size.id%>" name="equipment_id_<%= index %>" value="<%= size.id %>">
+              <label for="equipment-id<%=size.id%>"><%= size.size %></label>
               <% end %>
-            </select>
+              <% index += 1 %>
+              <% end %>
+
+            </div>
           </td>
         </tr>
         <tr>

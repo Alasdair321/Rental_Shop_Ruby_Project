@@ -15,6 +15,7 @@ class Lease
   end
 
   def save()
+    equipment = Equipment.find(@equipment_id)
     #finds all leases with ID and puts into ARRAY
     leases_by_id_array = Lease.find_all_leases_by_id(@equipment_id)
     #creates array of dates from start to end date
@@ -54,10 +55,10 @@ class Lease
       result = SqlRunner.run(sql, values)
       id = result.first['id']
       @id = id
-      return "Reservation successful"
+      return "Reservation of #{equipment.type} size - #{equipment.size} was successful"
     else
       #if there was insufficient stock on any day in the duration then return string:
-      return "Insufficient stock for selected dates."
+      return "Insufficient stock for selected dates for #{equipment.type} size - #{equipment.size}."
     end
   end
 

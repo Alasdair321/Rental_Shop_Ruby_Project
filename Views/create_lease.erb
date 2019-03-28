@@ -2,7 +2,9 @@
 
 
 <div class="confirmation-container">
-  <h3><%=@statement%></h3>
+  <% for statement in @statements %>
+  <h5><%=statement%></h5>
+  <% end %>
   <div class="btn-another-lease">
     <a href="/leases/new-lease">
       <button type="button" name="button" class="quickbutton">

@@ -6,6 +6,7 @@ require_relative('models/lease.rb')
 require_relative('models/currentleases.rb')
 require_relative('models/leaseslog.rb')
 also_reload('./models/*')
+require "pry-byebug"
 
 get '/leases' do
   @current_leases = CurrentLeases.all_leases
@@ -15,11 +16,27 @@ end
 get '/leases/new-lease' do
   @customers = Customer.all
   @equipment = Equipment.all
+  @types = Equipment.types
+  @sizes = Equipment.sizes_of_type
   erb(:new_lease)
 end
 
 post '/leases' do
-  @statement = Lease.new(params).save
+  equipment_id_array = params.values
+  equipment_id_array.delete_at(-1)
+  equipment_id_array.delete_at(-1)
+  equipment_id_array.delete_at(-1)
+  @statements = []
+  for e_id in equipment_id_array
+    new_params = {'equipment_id' => e_id,
+      'customer_id' => params['customer_id'],
+      'start_date' => params['start_date'],
+      'end_date' => params['end_date'],
+      'number_leased' => params['number_leased']
+    }
+    statement = Lease.new(new_params).save
+    @statements.push(statement)
+  end
   erb(:create_lease)
 end
 
