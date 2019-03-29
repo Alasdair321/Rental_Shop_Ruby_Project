@@ -27,7 +27,7 @@ class Lease
       for lease in leases_by_id_array
         lease_date_range = date_range_array(lease.start_date, lease.end_date)
         for date_lease_object in lease_date_range
-          if date == date_lease_object #if proposed date matches other lease date then count + 1
+          if date == date_lease_object #if proposed date matches other lease date then count
             counter += lease.number_leased.to_i
           end
         end
