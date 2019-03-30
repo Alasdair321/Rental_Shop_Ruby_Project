@@ -1,5 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('./lease')
+require "pry-byebug"
+
 
 class Equipment
 
@@ -82,6 +84,7 @@ class Equipment
     WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values).first
+    # binding.pry
     equipment = Equipment.new(result)
     return equipment
   end

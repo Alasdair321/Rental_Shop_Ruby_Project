@@ -1,11 +1,15 @@
 require_relative('../db/sql_runner')
 # require('pry')
+require "pry-byebug"
+
+
 
 class Lease
 
   attr_reader :id, :equipment_id, :customer_id, :start_date, :end_date, :number_leased
 
   def initialize(options)
+    # binding.pry
     @id = options["id"].to_i if options["id"]
     @equipment_id = options["equipment_id"].to_i
     @customer_id = options["customer_id"].to_i
@@ -16,12 +20,14 @@ class Lease
 
   def save()
     equipment = Equipment.find(@equipment_id)
+    # binding.pry
     #finds all leases with ID and puts into ARRAY
     leases_by_id_array = Lease.find_all_leases_by_id(@equipment_id)
     #creates array of dates from start to end date
     proposed_lease_date_range = date_range_array(@start_date, @end_date)
+    # binding.pry
     #checks each date in date range for matching dates in leases with the same equipment_id
-    counter_array = [] #empty array to be filled by matching instances for each date
+    counter_array = [0] #empty array to be filled by matching instances for each date
     for date in proposed_lease_date_range
       counter = 0
       for lease in leases_by_id_array

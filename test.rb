@@ -16,12 +16,15 @@ require "pry-byebug"
 types = Equipment.types
 sizes = Equipment.sizes_of_type
 
-index = 0
-for type in types
-  p type.type
-  for size in sizes[index]
-  p size.id
-  p size.size
-  end
-  index += 1
-end
+p types
+p sizes
+
+# index = 0
+# for type in types
+#   p type.type
+#   for size in sizes[index]
+#   p size.id
+#   p size.size
+#   end
+#   index += 1
+# end

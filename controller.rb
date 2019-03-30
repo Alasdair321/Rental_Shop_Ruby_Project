@@ -22,10 +22,15 @@ get '/leases/new-lease' do
 end
 
 post '/leases' do
-  equipment_id_array = params.values
+  puts "Post"
+  # binding.pry
+
+  equipment_id_array = Array.new(params.values)
+  equipment_id_array.delete_at(0)
   equipment_id_array.delete_at(-1)
   equipment_id_array.delete_at(-1)
   equipment_id_array.delete_at(-1)
+  puts "after post"
   @statements = []
   for e_id in equipment_id_array
     new_params = {'equipment_id' => e_id,
@@ -34,9 +39,17 @@ post '/leases' do
       'end_date' => params['end_date'],
       'number_leased' => params['number_leased']
     }
+    puts "iteration loop"
+
+
     statement = Lease.new(new_params).save
+    puts "after statement"
+
     @statements.push(statement)
+    puts "after push"
+
   end
+  puts "End post"
   erb(:create_lease)
 end
 
