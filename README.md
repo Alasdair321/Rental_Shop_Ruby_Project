@@ -13,14 +13,13 @@ The website is has been programmed using Ruby and PSQL for databasing. The web a
 
 ### Screenshots:
 
-![test image](public/background.jpg)
-![home page](public/screenshot1.png)
-![Customer Details](public/screenshot2.png)
-![Equipment Details 1](public/screenshot3.png)
-![Equipment Details 2](public/screenshot4.png)
-![Create lease 1](public/screenshot5.png)
-![Create lease 2](public/screenshot6.png)
-![Current and Ended Leases](public/screenshot7.png)
+![home page](public/screenshots/screenshot1.png)
+![Customer Details](public/screenshots/screenshot2.png)
+![Equipment Details 1](public/screenshots/screenshot3.png)
+![Equipment Details 2](public/screenshots/screenshot4.png)
+![Create lease 1](public/screenshots/screenshot5.png)
+![Create lease 2](public/screenshots/screenshot6.png)
+![Current and Ended Leases](public/screenshots/screenshot7.png)
 
 
 ### Features
