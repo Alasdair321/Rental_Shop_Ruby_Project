@@ -13,7 +13,7 @@ The website is has been programmed using Ruby and PSQL for databasing. The web a
 
 ### Screenshots:
 
-![test image](public/background.JPG)
+![test image](public/background.jpg)
 ![home page](public/screenshot1.png)
 ![Customer Details](public/screenshot2.png)
 ![Equipment Details 1](public/screenshot3.png)
