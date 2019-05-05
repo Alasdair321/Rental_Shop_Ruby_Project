@@ -14,13 +14,17 @@ The website is has been programmed using Ruby and PSQL for databasing. The web a
 ### Screenshots:
 
 ![home page](public/screenshots/screenshot1.png)
+###
 ![Customer Details](public/screenshots/screenshot2.png)
+###
 ![Equipment Details 1](public/screenshots/screenshot3.png)
 ![Equipment Details 2](public/screenshots/screenshot4.png)
+###
 ![Create lease 1](public/screenshots/screenshot5.png)
 ![Create lease 2](public/screenshots/screenshot6.png)
+###
 ![Current and Ended Leases](public/screenshots/screenshot7.png)
-
+###
 
 ### Features
 - The database is protected against SQL injection by using prepared statements. 
